@@ -20,7 +20,9 @@
   }
 
   // Decode + xử lý dấu '+' (nhiều người copy link hay có '+')
-  const decoded = decodeURIComponent(raw.replace(/\+/g, " ")).trim();
+  const decoded = decodeURIComponent(raw)
+  .replace(/[+-]/g, " ")
+  .trim();
 
   // Chặn rỗng / quá dài (tránh phá layout)
   const safeName = decoded.length ? decoded.slice(0, 60) : fallback;
