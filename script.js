@@ -289,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (enterBtn) {
         enterBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             if (welcomeScreen) welcomeScreen.classList.add('hidden');
             playMusic();
         });
