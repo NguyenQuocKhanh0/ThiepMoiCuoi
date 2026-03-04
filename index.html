@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quốc Khánh & Ân Khoa - Wedding Invitation</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Chúng mình sắp kết hôn! Hãy cùng chúng mình chia sẻ niềm vui trong ngày trọng đại - 09/03/2026">
+    <meta name="keywords" content="wedding, thiệp cưới, Quốc Khánh, Ân Khoa">
+    <meta name="author" content="Quốc Khánh & Ân Khoa">
+    
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://virtuesky.github.io/DucKhoaWedding/">
+    <meta property="og:title" content="Quốc Khánh & Ân Khoa - Wedding Invitation">
+    <meta property="og:description" content="Chúng tôi sắp kết hôn! Hãy cùng chúng tôi chia sẻ niềm vui trong ngày trọng đại - 09/03/2026">
+    <meta property="og:image" content="AbumAnhCuoi_Compress/1.jpg">
+    <meta property="og:image:secure_url" content="AbumAnhCuoi_Compress/1.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Quốc Khánh & Ân Khoa - Wedding Invitation">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://virtuesky.github.io/DucKhoaWedding/">
+    <meta property="twitter:title" content="Quốc Khánh & Ân Khoa - Wedding Invitation">
+    <meta property="twitter:description" content="Chúng tôi sắp kết hôn! Hãy cùng chúng tôi chia sẻ niềm vui trong ngày trọng đại - 09/03/2026">
+    <meta property="twitter:image" content="AbumAnhCuoi_Compress/1.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Avata/avt_chu_re.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Screen (để bypass autoplay policy) -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+            <p class="welcome-text">Wedding Invitation</p>
+            <h1 class="welcome-names">
+                Quốc Khánh 
+                <span class="amp">&</span> 
+                Ân Khoa
+            </h1>
+            <p class="welcome-date">29.03.2026</p>
+            <p class="welcome-invitee">
+            Trân trọng kính mời
+            </p>
+            <span id="inviteeName">Quý khách</span>
+            <div class="invitation-envelope" id="enterBtn">
+                <div class="env-wrap">
+                    <div class="env-body"></div>
+                    <div class="env-fold env-fold-left"></div>
+                    <div class="env-fold env-fold-right"></div>
+                    <div class="env-fold env-fold-bottom"></div>
+                    <div class="env-flap"></div>
+                    <div class="env-seal"><span>❤️</span></div>
+                    <div class="env-letter-peek">✦ Kính mời ✦</div>
+                </div>
+                <p class="envelope-cta">Mở Thiệp Mời</p>
+                <p class="envelope-hint"><i class="fas fa-hand-pointer"></i> Nhấn để xem thiệp cưới</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="wedding-text">Wedding Invitation</p>
+            <h1 class="couple-names">
+                <span class="groom-name">Quốc Khánh</span>
+                <span class="ampersand"> & </span>
+                <span class="bride-name">Ân Khoa</span>
+            </h1>
+            <p class="wedding-date-hero">Chúng tôi sắp kết hôn</p>
+        </div>
+        <div class="scroll-down">
+            <a href="#save-date"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Save the Date Section -->
+    <section class="save-date" id="save-date">
+        <div class="container">
+            <h2 class="section-title script anim-title">Save the Date</h2>
+            <div class="date-display">
+                <div class="date-item anim-fade-up" data-delay="100">
+                    <span class="date-number">29</span>
+                    <span class="date-label">Tháng 03</span>
+                </div>
+                <div class="date-divider"></div>
+                <div class="date-item anim-fade-up" data-delay="220">
+                    <span class="date-number">2026</span>
+                    <span class="date-label">Năm</span>
+                </div>
+            </div>
+            <div class="countdown anim-fade-up" data-delay="360" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Ngày</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">08</span>
+                    <span class="countdown-label">Giờ</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Phút</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Giây</span>
+                </div>
+            </div>
+            <a href="#guestbook" class="btn-wish anim-fade-up" data-delay="480">Gửi Lời Chúc</a>
+        </div>
+    </section>
+
+    <!-- Couple Section -->
+    <section class="couple" id="couple">
+        <div class="container">
+            <h2 class="section-title anim-title">Cô Dâu & Chú Rể</h2>
+            <div class="couple-wrapper">
+                <div class="person groom anim-left">
+                    <div class="person-image">
+                        <img src="Avata/avt_chu_re.jpg" alt="Chú rể">
+                    </div>
+                    <h3 class="person-name script">Quốc Khánh</h3>
+                    <p class="person-role">Chú Rể</p>
+                    <p class="person-desc">Là một lập trình viên, luôn nỗ lực trong công việc, yêu cuộc sống và trân trọng những giá trị gia đình. Anh tin rằng hạnh phúc được vun đắp từ sự chân thành và cố gắng mỗi ngày. Hôm nay, anh hạnh phúc khi được nắm tay người mình yêu thương, cùng nhau bước vào một hành trình mới của cuộc đời.</p>
+                    <div class="person-parents">
+                        <p><strong>Con ông:</strong> Nguyễn Văn Kiên</p>
+                        <p><strong>Con bà:</strong> Nguyễn Thị Nga</p>
+                    </div>
+                </div>
+                <div class="heart-divider anim-fade-up" data-delay="200">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="person bride anim-right">
+                    <div class="person-image">
+                        <img src="Avata/avt_co_dau.jpg" alt="Cô dâu">
+                    </div>
+                    <h3 class="person-name script">Ân Khoa</h3>
+                    <p class="person-role">Cô Dâu</p>
+                    <p class="person-desc">Là một hành chính nhân sự, cô mang trong mình sự dịu dàng, thông minh và tấm lòng luôn quan tâm đến những người xung quanh. Cô tin vào tình yêu chân thành và mong muốn cùng người bạn đời xây dựng một mái ấm yêu thương, hạnh phúc.</p>
+                    <div class="person-parents">
+                        <p><strong>Con ông:</strong> Chu Văn Trung</p>
+                        <p><strong>Con bà:</strong> Đỗ Thị Tuyết</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="container">
+            <h2 class="section-title anim-title">Chuyện Tình Yêu</h2>
+            <p class="story-intro anim-fade-up" data-delay="150">Và đây là câu chuyện của chúng mình...</p>
+            <div class="scroll-hint-top">
+                <span class="scroll-hint-arrows">
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+                <span class="scroll-hint-text">Vuốt ngang để xem tiếp</span>
+            </div>
+        </div>
+        <div class="timeline-scroll-wrapper">
+            <div class="timeline-horizontal" id="timelineScroll">
+            <div class="timeline-track">
+                <div class="timeline-item-h">
+                    <div class="timeline-year">2017 - 2020</div>
+                    <div class="timeline-card">
+                        <div class="timeline-images single">
+                            <img src="Stories_Compress/2.JPG" data-full-src="Stories/2.JPG" alt="Cấp 3" loading="lazy">
+                        </div>
+                        <div class="timeline-text">
+                            <h3>🌤️ Hạt Mầm Thương Nhớ Dưới Nắng Sân Trường</h3>
+                            <p>Câu chuyện của chúng mình bắt đầu vào những ngày cuối năm lớp 10 (2017), khi nắng sân trường còn vương trên tà áo trắng. Khoảnh khắc em đứng lên trả lời bài, giọng nói trong trẻo ấy đã vô tình đánh rơi vào lòng anh một hạt mầm thương nhớ. Suốt 3 năm cấp ba, anh cất giữ tình cảm ấy vào những trang vở, và vào cả những ô cờ Caro chi chít mực xanh đen. Ngày ấy, anh đâu chỉ chơi cờ, anh chơi trò "kéo dài thời gian" để được ở bên em thêm chút nữa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item-h">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-card">
+                        <div class="timeline-images single">
+                            <img src="Stories_Compress/5.JPG" data-full-src="Stories/5.JPG" alt="Học cùng" loading="lazy">
+                        </div>
+                        <div class="timeline-text">
+                            <h3>♟️ Lời tỏ tình</h3>
+                            <p>Năm 2020, khi cánh cửa đại học mở ra, anh quyết định không để tình yêu này mãi là những nước cờ im lặng. Trên chính bàn cờ Caro quen thuộc năm nào, anh đã đánh một nước cờ liều lĩnh nhất: Nước cờ mang tên "Lời Tỏ Tình". Và thật may mắn, em đã điền vào ô trống còn lại một cái gật đầu. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item-h">
+                    <div class="timeline-year">2020 - 2025</div>
+                    <div class="timeline-card">
+                        <div class="timeline-images grid-2">
+                            <!-- <img src="Stories_Compress/8.jpg" data-full-src="Stories/8.jpg" alt="Khoa tốt nghiệp 2" loading="lazy"> -->
+                            <img src="Stories_Compress/9.jpg" data-full-src="Stories/9.jpg" alt="Khánh tốt nghiệp" loading="lazy">
+                            <img src="Stories_Compress/10.jpg" data-full-src="Stories/10.jpg" alt="Khoa tốt nghiệp" loading="lazy">
+                        </div>
+                        <div class="timeline-text">
+                            <h3>💛 Chín Năm Bình Yên Không Một Lần To Tiếng</h3>
+                            <p>Bốn năm đại học (2020-2024), rồi đến những ngày đầu chập chững đi làm (2024-2025), chúng ta đã cùng nhau trưởng thành. Từ giảng đường đến văn phòng, từ những con phố quen đến những vùng đất mới lạ trong các chuyến du lịch, đâu đâu cũng in dấu chân hai đứa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item-h">
+                    <div class="timeline-year">2025 - 2026</div>
+                    <div class="timeline-card">
+                        <div class="timeline-images grid-4">
+                            <img src="Stories_Compress/6.jpg" data-full-src="Stories/6.jpg" alt="Đi chơi 1" loading="lazy">
+                            <img src="Stories_Compress/7.jpg" data-full-src="Stories/7.jpg" alt="Đi chơi 2" loading="lazy">
+                            <img src="Stories_Compress/8.jpg" data-full-src="Stories/8.jpg" alt="Đi chơi 3" loading="lazy">
+                            <img src="Stories_Compress/15.jpg" data-full-src="Stories/15.jpg" alt="Đi chơi 4" loading="lazy">
+                        </div>
+                        <div class="timeline-text">
+                            <h3>💍 Ván Cờ Cuộc Đời - Và Cái Kết Viên Mãn</h3>
+                            <p>Đến năm 2026, nhìn lại hành trình 9 năm đằng đẵng, điều kỳ diệu nhất không phải là thời gian, mà là sự bình yên. 9 năm - vui có, buồn có, nhưng chúng mình chưa một lần to tiếng cãi vã. Chúng ta đã chứng minh rằng, khi sự thấu hiểu đủ lớn, mọi mâu thuẫn đều trở nên nhỏ bé.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item-h">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-card">
+                        <div class="timeline-images grid-4">
+                            <img src="Stories_Compress/11.jpg" data-full-src="Stories/11.jpg" alt="Đi chơi 5" loading="lazy">
+                            <img src="Stories_Compress/12.jpg" data-full-src="Stories/12.jpg" alt="Đi chơi 6" loading="lazy">
+                            <img src="Stories_Compress/13.jpg" data-full-src="Stories/13.jpg" alt="Đi chơi 7" loading="lazy">
+                            <img src="Stories_Compress/14.jpg" data-full-src="Stories/14.jpg" alt="Đi chơi 8" loading="lazy">
+                        </div>
+                        <div class="timeline-text">
+                            <h3>Đi đâu cũng có tệp đính kèm</h3>
+                            <p>Từ bàn cờ Caro năm ấy đến lễ đường hôm nay, cảm ơn em đã đồng ý để ván cờ cuộc đời này, chúng mình cùng nhau thắng. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="timeline-fade-right"></div>
+        </div>
+        <div class="scroll-hint" id="scrollHint">
+            <span class="scroll-hint-arrows">
+                <i class="fas fa-chevron-right"></i>
+                <i class="fas fa-chevron-right"></i>
+                <i class="fas fa-chevron-right"></i>
+            </span>
+            <span class="scroll-hint-text">Vuốt ngang để xem tiếp</span>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section class="event" id="event">
+        <div class="container">
+            <h2 class="section-title anim-title">Sự Kiện Cưới</h2>
+            <div class="events-wrapper">
+                <div class="event-card anim-left">
+                    <div class="event-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Lễ Ăn Hỏi</h3>
+                    <p class="event-time"><i class="far fa-clock"></i> 14:00</p>
+                    <p class="event-date"><i class="far fa-calendar"></i> 28/03/2026</p>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Nhà gái: Làng Lại Khánh, Lại Thượng, Hà Nội</p>
+                </div>
+                <div class="event-card anim-right">
+                    <div class="event-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Lễ Thành Hôn</h3>
+                    <p class="event-time"><i class="far fa-clock"></i> 08:00</p>
+                    <p class="event-date"><i class="far fa-calendar"></i> 29/03/2026</p>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Nhà trai: Thôn Cánh Chủ, xã Hạ Bằng, Hà Nội</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title anim-title">Album Ảnh</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-index="0">
+                    <img src="AbumAnhCuoi_Compress/1.JPG" data-full-src="AbumAnhCuoi/1.JPG" alt="Ảnh cưới Khánh & Khoa 1" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="AbumAnhCuoi_Compress/2.JPG" data-full-src="AbumAnhCuoi/2.JPG" alt="Ảnh cưới Khánh & Khoa 2" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="AbumAnhCuoi_Compress/3.JPG" data-full-src="AbumAnhCuoi/3.JPG" alt="Ảnh cưới Khánh & Khoa 3" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="AbumAnhCuoi_Compress/4.JPG" data-full-src="AbumAnhCuoi/4.JPG" alt="Ảnh cưới Khánh & Khoa 4" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="AbumAnhCuoi_Compress/5.JPG" data-full-src="AbumAnhCuoi/5.JPG" alt="Ảnh cưới Khánh & Khoa 5" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img src="AbumAnhCuoi_Compress/6.JPG" data-full-src="AbumAnhCuoi/6.JPG" alt="Ảnh cưới Khánh & Khoa 6" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <img src="AbumAnhCuoi_Compress/7.JPG" data-full-src="AbumAnhCuoi/7.JPG" alt="Ảnh cưới Khánh & Khoa 7" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <img src="AbumAnhCuoi_Compress/8.JPG" data-full-src="AbumAnhCuoi/8.JPG" alt="Ảnh cưới Khánh & Khoa 8" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="8">
+                    <img src="AbumAnhCuoi_Compress/9.JPG" data-full-src="AbumAnhCuoi/9.JPG" alt="Ảnh cưới Khánh & Khoa 9" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="9">
+                    <img src="AbumAnhCuoi_Compress/10.JPG" data-full-src="AbumAnhCuoi/10.JPG" alt="Ảnh cưới Khánh & Khoa 10" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="10">
+                    <img src="AbumAnhCuoi_Compress/11.JPG" data-full-src="AbumAnhCuoi/11.JPG" alt="Ảnh cưới Khánh & Khoa 11" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="11">
+                    <img src="AbumAnhCuoi_Compress/12.JPG" data-full-src="AbumAnhCuoi/12.JPG" alt="Ảnh cưới Khánh & Khoa 12" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="12">
+                    <img src="AbumAnhCuoi_Compress/13.JPG" data-full-src="AbumAnhCuoi/13.JPG" alt="Ảnh cưới Khánh & Khoa 13" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="13">
+                    <img src="AbumAnhCuoi_Compress/14.JPG" data-full-src="AbumAnhCuoi/14.JPG" alt="Ảnh cưới Khánh & Khoa 14" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guestbook Section -->
+    <section class="guestbook" id="guestbook">
+        <div class="container">
+            <h2 class="section-title anim-title">Sổ Lưu Bút</h2>
+            <p class="guestbook-intro anim-fade-up" data-delay="150">Hãy gửi những lời chúc tốt đẹp nhất đến cô dâu và chú rể nhé!</p>
+            <form id="guestbook-form" class="guestbook-form anim-fade-up" data-delay="280">
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" id="name" name="name" required placeholder="Nhập họ và tên của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="attending">Bạn có tham dự không?</label>
+                    <select id="attending" name="attending">
+                        <option value="yes">Có, tôi sẽ tham dự</option>
+                        <option value="no">Rất tiếc, tôi không thể tham dự</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="side">Bạn là khách mời của?</label>
+                        <select id="side" name="side">
+                            <option value="Chú rể">Chú rể</option>
+                            <option value="Cô dâu">Cô dâu</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group--quantity">
+                        <label for="quantity">Số lượng</label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="99" value="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Lời chúc</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Viết lời chúc của bạn..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <span class="btn-text">Gửi Lời Chúc</span>
+                    <span class="btn-loading" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Đang gửi...</span>
+                </button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+            
+            <!-- Display wishes -->
+            <div class="wishes-list" id="wishes-list">
+                <h3>Lời chúc từ khách mời</h3>
+                <div id="wishes-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Section -->
+    <section class="gift-section" id="gift">
+        <div class="container">
+            <h2 class="section-title">Gửi Quà Mừng Cưới</h2>
+            <p class="gift-intro">Sự hiện diện của bạn trong ngày đặc biệt này đã là món quà trân quý nhất đối với chúng mình. Nếu bạn muốn gửi thêm lời chúc phúc qua phong bì đỏ, chúng mình xin gửi thông tin chuyển khoản bên dưới 💝<br><br>Chúng mình vô cùng trân trọng và chân thành cảm ơn tình cảm, sự yêu thương và những lời chúc tốt đẹp mà bạn đã dành cho hai đứa. 💖</p>
+            <div class="gift-cards">
+                <div class="gift-card animate-on-scroll scale-in">
+                    <div class="gift-card-header">
+                        <img src="Avata/avt_chu_re.jpg" alt="Chú rể" class="gift-avatar">
+                        <h3>Chú Rể</h3>
+                        <p class="gift-name">Nguyễn Quốc Khánh</p>
+                        <p class="gift-bank"><i class="fas fa-university"></i> MBBank</p>
+                        <p class="gift-stk">STK: 8738612112002</p>
+                    </div>
+                    <div class="gift-qr">
+                        <img src="QR/qr_chu_re.jpg" alt="QR chuyển tiền chú rể" onerror="this.parentElement.innerHTML='<div class=\'qr-placeholder\'><i class=\'fas fa-qrcode\'></i><p>QR sẽ được cập nhật sớm</p></div>'">
+                    </div>
+                </div>
+                <div class="gift-card animate-on-scroll scale-in">
+                    <div class="gift-card-header">
+                        <img src="Avata/avt_co_dau.jpg" alt="Cô dâu" class="gift-avatar">
+                        <h3>Cô Dâu</h3>
+                        <p class="gift-name">Chu Ân Khoa</p>
+                        <p class="gift-bank"><i class="fas fa-university"></i> Techcombank</p>
+                        <p class="gift-stk">STK: 5400121102</p>
+                    </div>
+                    <div class="gift-qr">
+                        <img src="QR/qr_co_dau.jpg" alt="QR chuyển tiền cô dâu" onerror="this.parentElement.innerHTML='<div class=\'qr-placeholder\'><i class=\'fas fa-qrcode\'></i><p>QR sẽ được cập nhật sớm</p></div>'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <h2 class="section-title">Địa Điểm Tổ Chức</h2>
+            <div class="map-wrapper">
+                <!-- Nhà Trai -->
+                <div class="map-location">
+                    <div class="map-card">
+                        <h3><i class="fas fa-home"></i> Nhà Trai</h3>
+                        <p>Xem địa chỉ trên Google Maps</p>
+                        <a href="https://maps.app.goo.gl/iGLWKxJwBPNYrE448" target="_blank" class="btn-direction">
+                            <i class="fas fa-directions"></i> Chỉ đường
+                        </a>
+                    </div>
+                    <div class="map-embed">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!4v1772093895347!6m8!1m7!1sFIpbdyn_jLHDoLUMlUxEUg!2m2!1d21.03768001145452!2d105.5467414675117!3f306.74!4f0.5300000000000011!5f0.7820865974627469"
+                            width="100%" 
+                            height="300" 
+                            style="border:0; border-radius: 15px;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Nhà Gái -->
+                <div class="map-location">
+                    <div class="map-card">
+                        <h3><i class="fas fa-home"></i> Nhà Gái</h3>
+                        <p>Xem địa chỉ trên Google Maps</p>
+                        <a href="https://maps.app.goo.gl/y3cyZvndGQprPe747" target="_blank" class="btn-direction">
+                            <i class="fas fa-directions"></i> Chỉ đường
+                        </a>
+                    </div>
+                    <div class="map-embed">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!4v1772094159809!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHFqWk91NlFF!2m2!1d21.07043576121263!2d105.5583498821742!3f3.2207275962656094!4f-0.6238629941283733!5f0.7820865974627469"
+                            width="100%" 
+                            height="300" 
+                            style="border:0; border-radius: 15px;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-names script">Quốc Khánh & Ân Khoa</p>
+            <p class="footer-date">29.03.2026</p>
+            <p class="footer-thanks">Cảm ơn bạn đã ghé thăm!</p>
+            <p class="footer-credit">Cảm ơn <a href="https://www.facebook.com/parisaocuoitt/" target="_blank" rel="noopener">AO Cuoi Paris</a> đã ghi lại những khoảnh khắc yêu thương của chúng mình. Top studio: Đẹp, chất lượng, giá cả yêu thương, nhiệt tình và vui vẻ 😘</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Quick Nav Bar -->
+    <div class="quick-nav" id="quickNav">
+        <a href="#couple" class="quick-nav-btn" title="Cô dâu & Chú rể">
+            <i class="fas fa-heart"></i>
+            <span>Giới thiệu</span>
+        </a>
+        <a href="#gallery" class="quick-nav-btn" title="Album ảnh cưới">
+            <i class="fas fa-images"></i>
+            <span>Album</span>
+        </a>
+        <a href="#guestbook" class="quick-nav-btn" title="Sổ lưu bút">
+            <i class="fas fa-pen-nib"></i>
+            <span>Lưu bút</span>
+        </a>
+        <a href="#gift" class="quick-nav-btn" title="Gửi quà">
+            <i class="fas fa-gift"></i>
+            <span>Quà</span>
+        </a>
+        <a href="#map" class="quick-nav-btn" title="Địa điểm tổ chức">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Địa chỉ</span>
+        </a>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <audio id="bgMusic" loop>
+            <source src="Music/background_music.mp3" type="audio/mpeg">
+        </audio>
+        <button class="music-btn" id="musicBtn" title="Bật/Tắt nhạc">
+            <i class="fas fa-music" id="musicIcon"></i>
+            <span class="music-wave" id="musicWave">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
+    </div>
+
+    <!-- Falling Flowers Container -->
+    <div class="falling-flowers" id="fallingFlowers"></div>
+
+    <!-- Image Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh">
+        <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Đóng">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Ảnh trước">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+        </button>
+        <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Ảnh tiếp theo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="Preview" id="lightboxImg">
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <!-- Cursor Effect Container -->
+    <div class="cursor-effect" id="cursorEffect"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
