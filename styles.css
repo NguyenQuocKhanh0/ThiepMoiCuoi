@@ -782,7 +782,7 @@ body {
 }
 
 .gift-card h3 {
-    font-family: var(--script-font, 'Dancing Script', cursive);
+    font-family: 'Pacifico';
     font-size: 1.6rem;
     color: var(--secondary-color);
     margin-bottom: 4px;
