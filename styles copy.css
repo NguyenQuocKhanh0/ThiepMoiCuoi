@@ -6,14 +6,13 @@
 }
 
 :root {
-    --primary-color: #fbe2f4;
-    --secondary-color: #9d0276;
-    --accent-color: #ffe2f2;
-    --button-color: #fc66cd;
+    --primary-color: #5e9a78;
+    --secondary-color: #3d7358;
+    --accent-color: #d6edd9;
     --text-dark: #333;
     --text-light: #666;
     --white: #fff;
-    --bg-light: linear-gradient(135deg, #fff0f6, #fff4fa);
+    --bg-light: #f2fbf5;
 }
 
 html {
@@ -207,7 +206,7 @@ body {
 .btn-wish {
     display: inline-block;
     padding: 15px 40px;
-    background: #fc66cd;
+    background: var(--primary-color);
     color: var(--white);
     text-decoration: none;
     border-radius: 30px;
@@ -247,7 +246,7 @@ body {
     margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #fc66cd;
+    border: 5px solid var(--primary-color);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -265,7 +264,7 @@ body {
 
 .person-role {
     font-size: 1rem;
-    color: #e358b7;
+    color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
@@ -278,7 +277,7 @@ body {
 }
 
 .person-parents {
-    background: #fff5fc;
+    background: var(--white);
     padding: 15px;
     border-radius: 10px;
     font-size: 0.9rem;
@@ -296,7 +295,7 @@ body {
 
 .heart-divider i {
     font-size: 3rem;
-    color: var(--button-color);
+    color: var(--primary-color);
     animation: heartbeat 1.5s infinite;
 }
 
@@ -371,7 +370,7 @@ body {
 }
 
 .timeline-year {
-    background: #ef9cd5;
+    background: var(--primary-color);
     color: var(--white);
     padding: 10px 25px;
     border-radius: 25px;
@@ -484,7 +483,7 @@ body {
 }
 
 .scroll-hint-top .scroll-hint-arrows i {
-    color: var(--button-color);
+    color: var(--primary-color);
     font-size: 0.8rem;
     animation: arrowSlide 1.2s ease-in-out infinite;
 }
@@ -605,7 +604,7 @@ body {
 .event-icon {
     width: 80px;
     height: 80px;
-    background: var(--button-color);
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -631,7 +630,7 @@ body {
 }
 
 .event-card p i {
-    color: var(--button-color);
+    color: var(--primary-color);
     margin-right: 10px;
     width: 20px;
 }
@@ -784,7 +783,7 @@ body {
 .gift-card h3 {
     font-family: var(--script-font, 'Dancing Script', cursive);
     font-size: 1.6rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 4px;
 }
 
@@ -802,7 +801,7 @@ body {
 
 .gift-stk {
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-size: 1rem;
     letter-spacing: 0.5px;
 }
@@ -917,7 +916,7 @@ body {
 .btn-submit {
     width: 100%;
     padding: 15px;
-    background: var(--button-color);
+    background: var(--primary-color);
     color: var(--white);
     border: none;
     border-radius: 30px;
@@ -1040,7 +1039,7 @@ body {
 
 /* Footer */
 .footer {
-    padding: 15px 0;
+    padding: 60px 0;
     background: var(--secondary-color);
     color: var(--white);
     text-align: center;
@@ -1094,7 +1093,7 @@ body {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: var(--button-color);
+    background: var(--primary-color);
     color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -1145,7 +1144,7 @@ body {
     border-radius: 50px;
     text-decoration: none;
     color: var(--white);
-    background: #fc66cd;
+    background: var(--primary-color);
     font-size: 0.72rem;
     font-weight: 500;
     transition: all 0.25s ease;
@@ -1287,7 +1286,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: var(--button-color);
+    background: var(--primary-color);
     border: none;
     cursor: pointer;
     display: flex;
@@ -1401,7 +1400,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(154, 94, 116, 0.9), rgba(255, 220, 243, 0.95)),
+    background: linear-gradient(135deg, rgba(154, 94, 116, 0.9), rgba(214, 237, 217, 0.95)),
                 url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=1080&fit=crop') center/cover;
     display: flex;
     align-items: center;
@@ -1787,7 +1786,7 @@ html, body {
 
 .map-card h3 i {
     margin-right: 10px;
-    color: var(--button-color);
+    color: var(--primary-color);
 }
 
 .map-card p {
@@ -1799,7 +1798,7 @@ html, body {
 .btn-direction {
     display: inline-block;
     padding: 12px 25px;
-    background: var(--button-color);
+    background: var(--primary-color);
     color: var(--white);
     text-decoration: none;
     border-radius: 25px;
@@ -2076,7 +2075,7 @@ html, body {
 
 /* Pulse animation for buttons */
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(254, 188, 234, 0.7); }
+    0% { box-shadow: 0 0 0 0 rgba(94, 154, 120, 0.7); }
     70% { box-shadow: 0 0 0 15px rgba(94, 154, 120, 0); }
     100% { box-shadow: 0 0 0 0 rgba(94, 154, 120, 0); }
 }
