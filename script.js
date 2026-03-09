@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // FALLING FLOWERS
     // ============================================
     var fallingFlowers = document.getElementById('fallingFlowers');
-    var flowerEmojis = ['🌸', '🌺', '💮', '🏵️', '🌷', '🌹', '💐', '🪷'];
+    var flowerEmojis = ['🌸', '🌺', '💮', '🩷', '💗', '❤️'];
 
     function createFlower() {
         if (!fallingFlowers) return;
