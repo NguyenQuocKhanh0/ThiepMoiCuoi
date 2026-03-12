@@ -185,11 +185,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 attending: document.getElementById('attending').value,
                 side: document.getElementById('side').value,
                 quantity: parseInt(document.getElementById('quantity').value, 10) || 1,
-                message: document.getElementById('message').value.trim()
+                message: document.getElementById('message').value.trim() || 'Mừng hạnh phúc cô dâu chú rể'
             };
 
-            if (!formData.name || !formData.message) {
-                showMessage('Vui lòng điền đầy đủ họ tên và lời chúc!', 'error');
+            if (!formData.name) {
+                showMessage('Vui lòng điền đầy đủ họ tên!', 'error');
                 return;
             }
 
@@ -223,7 +223,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
     // ============================================
     // SCROLL ANIMATION — Unified Element System
     // ① anim-title  ② anim-fade-up  ③ anim-left/right  ④ gallery polaroid
@@ -268,39 +267,327 @@ document.addEventListener('DOMContentLoaded', function() {
     var enterBtn = document.getElementById('enterBtn');
     var isPlaying = false;
 
+    var hasOpenedInvitation = false;
+    var autoOpenTimer = null;
+    var musicPendingUserGesture = false;
+
+    var hasOpenedInvitation = false;
+    var autoOpenTimer = null;
+    var musicPendingUserGesture = false;
+
     function playMusic() {
-        if (!bgMusic) return;
-        bgMusic.play().then(function() {
+        if (!bgMusic) return Promise.resolve(false);
+
+        return bgMusic.play().then(function() {
             if (musicBtn) musicBtn.classList.add('playing');
             isPlaying = true;
+            musicPendingUserGesture = false;
+            return true;
         }).catch(function(error) {
             console.log('Autoplay prevented:', error);
+            isPlaying = false;
+            musicPendingUserGesture = true;
+            return false;
         });
     }
 
     function toggleMusic() {
         if (!bgMusic) return;
+
         if (isPlaying) {
             bgMusic.pause();
             if (musicBtn) musicBtn.classList.remove('playing');
             isPlaying = false;
+            musicPendingUserGesture = false;
         } else {
             playMusic();
         }
     }
 
-    if (enterBtn) {
-        enterBtn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-            if (welcomeScreen) welcomeScreen.classList.add('hidden');
-            playMusic();
-        });
+    function tryPlayOnFirstGesture() {
+        if (!musicPendingUserGesture) return;
+        playMusic();
     }
+
+    function bindFirstGestureToPlay() {
+        document.addEventListener('click', tryPlayOnFirstGesture, { passive: true });
+        document.addEventListener('touchstart', tryPlayOnFirstGesture, { passive: true });
+        document.addEventListener('keydown', tryPlayOnFirstGesture);
+    }
+
+    let petalFx = null;
+
+    function rand(min, max) {
+    return Math.random() * (max - min) + min;
+    }
+
+    function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+    }
+
+    function createPetalBurst(options = {}) {
+    const layer = document.getElementById('petalBurst');
+    if (!layer) return;
+
+    // huỷ hiệu ứng cũ nếu đang chạy
+    if (petalFx && petalFx.rafId) {
+        cancelAnimationFrame(petalFx.rafId);
+    }
+
+    layer.innerHTML = '';
+
+    let vw = window.innerWidth;
+    let vh = window.innerHeight;
+    const diag = Math.hypot(vw, vh);
+
+    const originEl =
+        options.originEl ||
+        document.querySelector('#welcomeScreen .welcome-content');
+
+    const rect = originEl ? originEl.getBoundingClientRect() : null;
+
+    const originX = options.originX ?? (rect ? rect.left + rect.width / 2 : vw / 2);
+    const originY = options.originY ?? (rect ? rect.top + rect.height / 2 : vh / 2);
+
+    // mật độ theo diện tích màn hình
+    const area = vw * vh;
+    const burstCount = clamp(Math.round(area / 15000), 46, 130);
+    const ambientCount = clamp(Math.round(area / 35000), 12, 36);
+
+    const petals = [];
+    const startedAt = performance.now();
+    const totalDuration = options.duration ?? 9000;
+
+    // gió nền thay đổi nhẹ theo thời gian
+    const baseWind = rand(-8, 8);
+
+    function setupBurstPetal(p) {
+        p.mode = 'burst';
+        p.x = originX + rand(-18, 18);
+        p.y = originY + rand(-18, 18);
+
+        const angle = rand(0, Math.PI * 2);
+        const speed = rand(diag * 0.38, diag * 0.78);
+
+        p.vx = Math.cos(angle) * speed * rand(0.85, 1.15);
+        p.vy = Math.sin(angle) * speed * rand(0.75, 1.1) - rand(260, 560);
+
+        p.gravity = rand(950, 1450);
+        p.drag = rand(0.985, 0.992);
+        p.spin = rand(-280, 280);
+        p.rot = rand(-180, 180);
+
+        p.swayAmp = rand(18, 42);
+        p.swayFreq = rand(0.7, 1.6);
+        p.phase = rand(0, Math.PI * 2);
+
+        p.scale = rand(0.82, 1.22);
+        p.opacity = 0;
+        p.age = 0;
+        p.fadeIn = rand(0.10, 0.24);
+    }
+
+    function setupAmbientPetal(p, immediate = false) {
+        p.mode = 'fall';
+        p.x = rand(-vw * 0.08, vw * 1.08);
+        p.y = immediate ? rand(-vh * 0.2, vh * 0.25) : rand(-vh * 0.22, -30);
+
+        p.vx = baseWind + rand(-40, 40);
+        p.vy = rand(30, 120);
+
+        p.gravity = rand(240, 460);
+        p.drag = rand(0.992, 0.996);
+        p.spin = rand(-160, 160);
+        p.rot = rand(-180, 180);
+
+        p.swayAmp = rand(14, 34);
+        p.swayFreq = rand(0.55, 1.25);
+        p.phase = rand(0, Math.PI * 2);
+
+        p.scale = rand(0.74, 1.08);
+        p.opacity = immediate ? rand(0.35, 0.95) : 0;
+        p.age = immediate ? rand(0.5, 2.4) : 0;
+        p.fadeIn = rand(0.18, 0.42);
+    }
+
+    function makePetal(type, immediate = false) {
+        const el = document.createElement('span');
+        el.className = 'petal';
+
+        const size = rand(12, 26) + Math.min(vw, vh) * 0.004;
+        el.style.width = `${size}px`;
+        el.style.height = `${size * 1.45}px`;
+
+        layer.appendChild(el);
+
+        const p = {
+        el,
+        size,
+        x: 0,
+        y: 0,
+        vx: 0,
+        vy: 0,
+        gravity: 0,
+        drag: 0.99,
+        spin: 0,
+        rot: 0,
+        swayAmp: 0,
+        swayFreq: 0,
+        phase: 0,
+        scale: 1,
+        opacity: 0,
+        age: 0,
+        fadeIn: 0.2,
+        mode: type
+        };
+
+        if (type === 'burst') setupBurstPetal(p);
+        else setupAmbientPetal(p, immediate);
+
+        return p;
+    }
+
+    for (let i = 0; i < burstCount; i++) {
+        petals.push(makePetal('burst'));
+    }
+
+    // thêm vài cánh đang rơi sẵn để nhìn “liên tục” ngay từ đầu
+    for (let i = 0; i < ambientCount; i++) {
+        petals.push(makePetal('fall', true));
+    }
+
+    let rafId = 0;
+    let lastTime = performance.now();
+
+    function frame(now) {
+        vw = window.innerWidth;
+        vh = window.innerHeight;
+
+        const dt = Math.min(0.032, (now - lastTime) / 1000 || 0.016);
+        lastTime = now;
+
+        const elapsed = now - startedAt;
+        const keepRespawn = elapsed < totalDuration;
+
+        const wind =
+        baseWind +
+        Math.sin(now * 0.00033) * 18 +
+        Math.cos(now * 0.00016) * 9;
+
+        let aliveCount = 0;
+
+        for (let i = 0; i < petals.length; i++) {
+        const p = petals[i];
+
+        p.age += dt;
+
+        const dragFactor = Math.pow(p.drag, dt * 60);
+
+        p.vx += wind * 0.02;
+        p.vx *= dragFactor;
+
+        p.vy += p.gravity * dt;
+        p.vy *= dragFactor;
+
+        const sway =
+            Math.sin(p.age * Math.PI * 2 * p.swayFreq + p.phase) *
+            p.swayAmp;
+
+        p.x += p.vx * dt + sway * dt * 1.15;
+        p.y += p.vy * dt;
+
+        p.rot += p.spin * dt;
+
+        if (p.opacity < 1) {
+            p.opacity = Math.min(1, p.opacity + dt / p.fadeIn);
+        }
+
+        // cuối hiệu ứng thì ngừng sinh mới và fade dần
+        if (!keepRespawn && p.y > vh * 0.55) {
+            p.opacity = Math.max(0, p.opacity - dt * 1.8);
+        }
+
+        p.el.style.opacity = p.opacity.toFixed(3);
+        p.el.style.transform =
+            `translate3d(${(p.x - p.size / 2).toFixed(2)}px, ${(p.y - p.size / 2).toFixed(2)}px, 0) ` +
+            `rotate(${p.rot.toFixed(2)}deg) scale(${p.scale.toFixed(3)})`;
+
+        const outBottom = p.y > vh + 120;
+        const outLeft = p.x < -140;
+        const outRight = p.x > vw + 140;
+
+        if (outBottom || outLeft || outRight) {
+            if (keepRespawn) {
+            setupAmbientPetal(p, false);
+            } else {
+            p.opacity = 0;
+            p.el.style.opacity = '0';
+            }
+        }
+
+        if (p.opacity > 0.02 && p.y < vh + 180) {
+            aliveCount++;
+        }
+        }
+
+        if (aliveCount > 0 || keepRespawn) {
+        rafId = requestAnimationFrame(frame);
+        } else {
+        layer.innerHTML = '';
+        petalFx = null;
+        }
+    }
+
+    petalFx = { rafId, petals };
+    rafId = requestAnimationFrame(frame);
+    petalFx.rafId = rafId;
+    }
+
+    function stopPetalBurst() {
+    const layer = document.getElementById('petalBurst');
+    if (petalFx && petalFx.rafId) {
+        cancelAnimationFrame(petalFx.rafId);
+    }
+    petalFx = null;
+    if (layer) layer.innerHTML = '';
+    }
+
+    function openInvitation() {
+        if (hasOpenedInvitation) return;
+        hasOpenedInvitation = true;
+
+        if (autoOpenTimer) {
+            clearTimeout(autoOpenTimer);
+        }
+
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
+        createPetalBurst();
+
+        if (welcomeScreen) {
+            welcomeScreen.classList.add('opening');
+
+            setTimeout(function() {
+                welcomeScreen.classList.add('hidden');
+            }, 1150);
+        }
+
+        playMusic();
+    }
+
+    if (enterBtn) {
+        enterBtn.addEventListener('click', openInvitation);
+    }
+
+    autoOpenTimer = setTimeout(function() {
+        openInvitation();
+    }, 8000);
 
     if (musicBtn) {
         musicBtn.addEventListener('click', toggleMusic);
     }
 
+    bindFirstGestureToPlay();
     // ============================================
     // CURSOR TRAIL EFFECT
     // ============================================
@@ -913,3 +1200,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+

@@ -2400,3 +2400,142 @@ html, body {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     white-space: nowrap;
 }
+
+/* =========================
+   WELCOME SCREEN
+========================= */
+
+#welcomeScreen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* card giữa */
+#welcomeScreen .welcome-content {
+  position: relative;
+  z-index: 3;
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  filter: blur(0);
+  transition:
+    transform 1.15s cubic-bezier(.22, 1, .36, 1),
+    opacity 0.85s ease,
+    filter 0.85s ease;
+  will-change: transform, opacity, filter;
+}
+
+/* khi bắt đầu mở */
+#welcomeScreen.opening .welcome-content {
+  transform: scale(0.92) translateY(-18px);
+  opacity: 0;
+  filter: blur(6px);
+}
+
+/* lớp sáng lan ra */
+#welcomeScreen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0.0) 100%);
+  transform: scale(0.7);
+  opacity: 0;
+  transition: transform 1s ease, opacity 0.8s ease;
+  z-index: 2;
+}
+
+#welcomeScreen.opening::after {
+  transform: scale(1.35);
+  opacity: 1;
+}
+
+/* =========================
+   PETAL BURST
+========================= */
+.petal-burst {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 26px;
+  opacity: 0;
+  will-change: transform, opacity;
+  transform: translate3d(-9999px, -9999px, 0) rotate(0deg) scale(1);
+  transform-origin: 50% 45%;
+  border-radius: 72% 0 72% 0;
+  background: linear-gradient(180deg, #ffe3ef 0%, #f7b2cb 52%, #e88bb0 100%);
+  /* box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.75),
+    inset -1px -2px 5px rgba(197, 83, 132, 0.14),
+    0 8px 16px rgba(232, 139, 176, 0.18);
+  filter: saturate(1.02); */
+}
+
+.petal::before {
+  content: "";
+  position: absolute;
+  inset: 14% 20% 50% 20%;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.28);
+  filter: blur(1px);
+}
+
+.petal::after {
+  content: "";
+  position: absolute;
+  left: 49%;
+  top: 16%;
+  width: 1px;
+  height: 58%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.0),
+    rgba(255,255,255,0.30),
+    rgba(255,255,255,0.0)
+  );
+  opacity: 0.65;
+}
+/* nút mở thiệp đẹp hơn một chút
+#enterBtn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#enterBtn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+#enterBtn:active {
+  transform: scale(0.98);
+}
+
+#enterBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: skewX(-24deg);
+}
+
+#enterBtn:hover::after {
+  animation: btnShine 0.9s ease;
+}
+
+@keyframes btnShine {
+  to {
+    left: 140%;
+  }
+} */
