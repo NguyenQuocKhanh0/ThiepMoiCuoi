@@ -313,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('click', tryPlayOnFirstGesture, { passive: true });
         document.addEventListener('touchstart', tryPlayOnFirstGesture, { passive: true });
         document.addEventListener('keydown', tryPlayOnFirstGesture);
+        document.addEventListener('scroll', tryPlayOnFirstGesture, { once: true });
     }
 
     let petalFx = null;
@@ -351,12 +352,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // mật độ theo diện tích màn hình
     const area = vw * vh;
-    const burstCount = clamp(Math.round(area / 15000), 46, 130);
-    const ambientCount = clamp(Math.round(area / 35000), 12, 36);
+    const burstCount = clamp(Math.round(area / 18000), 45, 130);
+    const ambientCount = clamp(Math.round(area / 55000), 15, 36);
 
     const petals = [];
     const startedAt = performance.now();
-    const totalDuration = options.duration ?? 9000;
+    const totalDuration = options.duration ?? 1500;
 
     // gió nền thay đổi nhẹ theo thời gian
     const baseWind = rand(-8, 8);
@@ -569,7 +570,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             setTimeout(function() {
                 welcomeScreen.classList.add('hidden');
-            }, 1150);
+            }, 350);
         }
 
         playMusic();
@@ -1131,20 +1132,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // SECTION BACKGROUND PHOTOS
     // ============================================
     var sectionBgPool = [
-        'AbumAnhCuoi_Compress/BH_01560phong.jpg',
-        'AbumAnhCuoi_Compress/BH_01578phong.jpg',
-        'AbumAnhCuoi_Compress/BH_01712cc_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_01749c_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_01828cc_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_01860_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_01867_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_01899_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_01930_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_01951_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_02042_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_02073_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_02088_(2).jpg',
-        'AbumAnhCuoi_Compress/BH_02154_(2).jpg'
+        'AbumAnhCuoi_Compress/3.JPG',
+        'AbumAnhCuoi_Compress/4.JPG',
+        'AbumAnhCuoi_Compress/5.JPG',
+        'AbumAnhCuoi_Compress/6.JPG',
+        'AbumAnhCuoi_Compress/7.JPG',
+        'AbumAnhCuoi_Compress/8.JPG',
+        'AbumAnhCuoi_Compress/9.JPG',
+        'AbumAnhCuoi_Compress/1.JPG',
+        'AbumAnhCuoi_Compress/13.JPG',
+        'AbumAnhCuoi_Compress/14.JPG',
+        'AbumAnhCuoi_Compress/16.JPG',
+        'AbumAnhCuoi_Compress/17.JPG'
     ];
 
     function shuffleArray(arr) {
@@ -1166,7 +1165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var imgSrc = shuffledBgImgs[i % shuffledBgImgs.length];
         var preloader = new Image();
         preloader.onload = function() {
-            section.style.setProperty('--section-bg', 'url("' + imgSrc + '")');
+            // section.style.setProperty('--section-bg', 'url("' + imgSrc + '")');
             section.classList.add('bg-loaded');
         };
         preloader.src = imgSrc;
