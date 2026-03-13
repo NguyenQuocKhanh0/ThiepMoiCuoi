@@ -106,6 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    document.querySelector('.scroll-down-overlay').addEventListener('click', () => {
+        const target = document.getElementById('save-date');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 
     // ============================================
     // GOOGLE SHEETS - GUESTBOOK
